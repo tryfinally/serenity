@@ -63,6 +63,8 @@ void TmpFS::register_inode(TmpFSInode& inode)
 
     unsigned index = inode.identifier().index();
     m_inodes.set(index, inode);
+    dbg() << "*** TempFS inodes table :" << m_inodes.size() << " : " << m_inodes.capacity() << "***\n";
+
 }
 
 void TmpFS::unregister_inode(InodeIdentifier identifier)
@@ -297,6 +299,8 @@ KResult TmpFSInode::add_child(Inode& child, const StringView& name, mode_t)
     FS::DirectoryEntry entry = { owned_name.characters(), owned_name.length(), child.identifier(), 0 };
 
     m_children.set(owned_name, { entry, static_cast<TmpFSInode&>(child) });
+    dbg() << "*** TempFSInode table :" << m_children.size() << " : " << m_children.capacity() << "***\n";
+
     did_add_child(name);
     return KSuccess;
 }

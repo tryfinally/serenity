@@ -37,6 +37,8 @@ ClientConnection::ClientConnection(NonnullRefPtr<Core::LocalSocket> client_socke
     : IPC::ClientConnection<NotificationServerEndpoint>(*this, move(client_socket), client_id)
 {
     s_connections.set(client_id, *this);
+    dbg() << "*** NotificationServer::ClientConnection s_connections :" << s_connections.size() << " : " << s_connections.capacity() << "***\n";
+
 }
 
 ClientConnection::~ClientConnection()

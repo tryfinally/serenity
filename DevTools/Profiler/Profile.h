@@ -93,6 +93,7 @@ public:
             m_events_per_address.set(address, 1);
         else
             m_events_per_address.set(address, it->value + 1);
+        dbg() << "*** Profiler::events-per-addr :" << m_events_per_address.size() << " : " << m_events_per_address.capacity() << "***\n";
     }
 
 private:

@@ -162,6 +162,9 @@ int Menu::realize_menu(RefPtr<Action> default_action)
         }
     }
     all_menus().set(m_menu_id, this);
+    dbg() << "*** Menu all_menus :" << all_menus().size() << " : " << all_menus().capacity() << "***\n";
+
+
     m_last_default_action = default_action ? default_action->make_weak_ptr() : nullptr;
     return m_menu_id;
 }

@@ -63,7 +63,7 @@ int Process::sys$shbuf_create(int size, void** buffer)
     klog() << "Created shared buffer " << shbuf_id << " @ " << buffer << " (" << size << " bytes, vmobject is " << shared_buffer->size() << ")";
 #endif
     shared_buffers().resource().set(shbuf_id, move(shared_buffer));
-
+    dbg() << "*** SharedBuffs table :" << shared_buffers().resource().size() << " : " << shared_buffers().resource().capacity() << "***\n";
     return shbuf_id;
 }
 

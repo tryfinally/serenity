@@ -1074,6 +1074,8 @@ RefPtr<Inode> ProcFS::get_inode(InodeIdentifier inode_id) const
     if (it == m_inodes.end()) {
         auto inode = adopt(*new ProcFSInode(const_cast<ProcFS&>(*this), inode_id.index()));
         m_inodes.set(inode_id.index(), inode.ptr());
+        dbg() << "*** ProcFS table :" << m_inodes.size() << " : " << m_inodes.capacity() << "***\n";
+
         return inode;
     }
     return (*it).value;

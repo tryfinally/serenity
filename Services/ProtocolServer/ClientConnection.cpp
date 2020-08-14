@@ -39,6 +39,8 @@ ClientConnection::ClientConnection(NonnullRefPtr<Core::LocalSocket> socket, int 
     : IPC::ClientConnection<ProtocolServerEndpoint>(*this, move(socket), client_id)
 {
     s_connections.set(client_id, *this);
+    dbg() << "*** ProtocolServer::ClientConnection s_connections :" << s_connections.size() << " : " << s_connections.capacity() << "***\n";
+
 }
 
 ClientConnection::~ClientConnection()

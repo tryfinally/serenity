@@ -64,6 +64,8 @@ FontDatabase::FontDatabase()
             m_name_to_metadata.set(font->name(), move(metadata));
         }
     }
+    dbg() << "*** FontDatabase m_name_to_metadata :" << m_name_to_metadata.size() << " : " << m_name_to_metadata.capacity() << "***\n";
+
 }
 
 FontDatabase::~FontDatabase()

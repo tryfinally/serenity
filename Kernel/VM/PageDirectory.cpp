@@ -110,6 +110,8 @@ PageDirectory::PageDirectory(Process& process, const RangeAllocator* parent_rang
     memcpy(new_pd, &buffer, sizeof(PageDirectoryEntry));
 
     cr3_map().set(cr3(), this);
+    dbg() << "*** cr3_map :" << cr3_map().size() << " : " << cr3_map().capacity() << "***\n";
+
 }
 
 PageDirectory::~PageDirectory()

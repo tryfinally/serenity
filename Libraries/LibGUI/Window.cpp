@@ -63,6 +63,8 @@ Window::Window(Core::Object* parent)
     : Core::Object(parent)
 {
     all_windows->set(this);
+    dbg() << "*** Window all_windows :" << all_windows->size() << " : " << all_windows->capacity() << "***\n";
+
     m_rect_when_windowless = { -5000, -5000, 140, 140 };
     m_title_when_windowless = "GUI::Window";
 }
@@ -116,6 +118,8 @@ void Window::show()
     apply_icon();
 
     reified_windows->set(m_window_id, this);
+    dbg() << "*** Window reified_windows :" << reified_windows->size() << " : " << reified_windows->capacity() << "***\n";
+
     Application::the()->did_create_window({});
     update();
 }

@@ -158,6 +158,7 @@ int Process::sys$module_load(Userspace<const char*> user_path, size_t path_lengt
 
     auto name = module->name;
     g_modules->set(name, move(module));
+    dbg() << "*** g_modules:" << g_modules->size() << " : " << g_modules->capacity() << " ***\n";
 
     return 0;
 }

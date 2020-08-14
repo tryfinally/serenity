@@ -483,6 +483,8 @@ OwnPtr<Messages::WindowServer::CreateWindowResponse> ClientConnection::handle(co
     if (window->type() == WindowType::MenuApplet)
         AppletManager::the().add_applet(*window);
     m_windows.set(window_id, move(window));
+    dbg() << "*** WindowServer m_windows :" << m_windows.size() << " : " << m_windows.capacity() << "***\n";
+
     return make<Messages::WindowServer::CreateWindowResponse>(window_id);
 }
 

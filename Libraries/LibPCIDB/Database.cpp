@@ -240,6 +240,9 @@ int Database::init()
 
     commit_all();
 
+    dbg() << "*** m_vendors table :" << m_vendors.size() << " : " << m_vendors.capacity() << "***\n";
+    dbg() << "*** m_classes table :" << m_classes.size() << " : " << m_classes.capacity() << "***\n";
+
     m_ready = true;
 
     return 0;

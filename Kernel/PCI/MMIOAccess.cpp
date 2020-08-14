@@ -107,6 +107,8 @@ MMIOAccess::MMIOAccess(PhysicalAddress p_mcfg)
         m_segments.set(index, { PhysicalAddress(lower_addr), start_bus, end_bus });
         klog() << "PCI: New PCI segment @ " << PhysicalAddress(lower_addr) << ", PCI buses (" << start_bus << "-" << end_bus << ")";
     }
+    dbg() << "*** MMIO segments table :" << m_segments.size() << " : " << m_segments.capacity() << "***\n";
+
     mcfg_region->unmap();
     klog() << "PCI: MMIO segments - " << m_segments.size();
 

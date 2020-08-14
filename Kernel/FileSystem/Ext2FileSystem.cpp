@@ -634,6 +634,7 @@ RefPtr<Inode> Ext2FS::get_inode(InodeIdentifier inode) const
             return (*it).value;
     }
 
+    dbg() << "*** iNode cache :" << m_inode_cache.size() << " : " << m_inode_cache.capacity() << "***\n";
     if (!get_inode_allocation_state(inode.index())) {
         m_inode_cache.set(inode.index(), nullptr);
         return nullptr;

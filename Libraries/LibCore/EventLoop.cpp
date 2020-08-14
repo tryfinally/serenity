@@ -96,6 +96,8 @@ public:
         , m_client_id(s_id_allocator->allocate())
     {
         s_rpc_clients.set(m_client_id, this);
+        dbg() << "*** RPCClient s_rpc_clients :" << s_rpc_clients.size() << " : " << s_rpc_clients.capacity() << "***\n";
+
         add_child(*m_socket);
         m_socket->on_ready_to_read = [this] {
             u32 length;
@@ -445,6 +447,8 @@ int EventLoop::SignalHandlers::add(Function<void(int)>&& handler)
 {
     int id = ++EventLoop::s_next_signal_id; // TODO: worry about wrapping and duplicates?
     m_handlers.set(id, move(handler));
+    dbg() << "*** EventLoop::SignalHandlers m_handlers:" << m_handlers.size() << " : " << m_handlers.capacity() << "***\n";
+
     return id;
 }
 
@@ -494,6 +498,8 @@ int EventLoop::register_signal(int signo, Function<void(int)> handler)
         SignalHandlers signal_handlers(signo);
         auto handler_id = signal_handlers.add(move(handler));
         s_signal_handlers.set(signo, move(signal_handlers));
+        dbg() << "*** EventLoop s_signal_handlers :" << s_signal_handlers.size() << " : " << s_signal_handlers.capacity() << "***\n";
+
         return handler_id;
     } else {
         return handlers->value.add(move(handler));
@@ -696,6 +702,9 @@ int EventLoop::register_timer(Object& object, int milliseconds, bool should_relo
     int timer_id = s_id_allocator->allocate();
     timer->timer_id = timer_id;
     s_timers->set(timer_id, move(timer));
+
+    dbg() << "*** EventLoop s_timers :" << s_timers->size() << " : " << s_timers->capacity() << "***\n";
+
     return timer_id;
 }
 

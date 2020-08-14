@@ -44,4 +44,7 @@ RefPtr<Gfx::Font> FontCache::get(const FontSelector& font_selector) const
 void FontCache::set(const FontSelector& font_selector, NonnullRefPtr<Gfx::Font> font)
 {
     m_fonts.set(font_selector, move(font));
+
+    dbg() << "*** FontCache set :" << m_fonts.size() << " : " << m_fonts.capacity() << "***\n";
+
 }

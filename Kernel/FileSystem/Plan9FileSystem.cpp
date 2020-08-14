@@ -521,6 +521,8 @@ KResult Plan9FS::wait_for_specific_message(u16 tag, Message& out_message)
     {
         LOCKER(m_lock);
         m_completions.set(tag, &completion);
+        dbg() << "*** P9FS completions :" << m_completions.size() << " : " << m_completions.capacity() << "***\n";
+
     }
 
     // Block until either:

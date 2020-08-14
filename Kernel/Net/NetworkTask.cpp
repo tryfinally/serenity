@@ -188,7 +188,7 @@ void handle_arp(const EthernetFrameHeader& eth, size_t frame_size)
         // FIXME: Support static ARP table entries.
         LOCKER(arp_table().lock());
         arp_table().resource().set(packet.sender_protocol_address(), packet.sender_hardware_address());
-
+        dbg() << "*** ARP table :" << arp_table().resource().size() << " : " << arp_table().resource().capacity() << "***\n";
         klog() << "ARP table (" << arp_table().resource().size() << " entries):";
         for (auto& it : arp_table().resource()) {
             klog() << it.value.to_string().characters() << " :: " << it.key.to_string().characters();

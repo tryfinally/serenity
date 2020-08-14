@@ -43,6 +43,8 @@ Protocol* Protocol::find_by_name(const String& name)
 Protocol::Protocol(const String& name)
 {
     all_protocols().set(name, this);
+    dbg() << "*** Protocol:: s_connections :" << all_protocols().size() << " : " << all_protocols().capacity() << "***\n";
+
 }
 
 Protocol::~Protocol()

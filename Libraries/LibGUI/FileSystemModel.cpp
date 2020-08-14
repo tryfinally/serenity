@@ -530,6 +530,8 @@ bool FileSystemModel::fetch_thumbnail_for(const Node& node)
             did_update();
         });
 
+    dbg() << "*** FileSystemModel s_thumbnail_cache :" << s_thumbnail_cache.size() << " : " << s_thumbnail_cache.capacity() << "***\n";
+
     return false;
 }
 

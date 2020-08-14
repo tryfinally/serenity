@@ -106,6 +106,9 @@ void* dlopen(const char* filename, int flags)
     }
 
     g_elf_objects.set(basename, move(loader));
+    dbg() << "*** g_elf_objects :" << g_elf_objects.size() << " : " << g_elf_objects.capacity() << "***\n";
+
+
     g_dlerror_msg = "Successfully loaded ELF object.";
 
     // we have one refcount already

@@ -50,6 +50,7 @@ FS::FS()
     : m_fsid(++s_lastFileSystemID)
 {
     all_fses().set(m_fsid, this);
+    dbg() << "*** FS table :" << all_fses().size() << " : " << all_fses().capacity() << "***\n";
 }
 
 FS::~FS()

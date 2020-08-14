@@ -67,6 +67,7 @@ i32 DisplayLink::register_callback(Function<void(i32)> callback)
 
     i32 callback_id = s_next_callback_id++;
     callbacks().set(callback_id, adopt(*new DisplayLinkCallback(callback_id, move(callback))));
+    dbg() << "*** DisplayLink:: callback :" << callbacks().size() << " : " << callbacks().capacity() << "***\n";
 
     return callback_id;
 }

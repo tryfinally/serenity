@@ -92,6 +92,9 @@ void Application::set_menubar(RefPtr<MenuBar> menubar)
 void Application::register_global_shortcut_action(Badge<Action>, Action& action)
 {
     m_global_shortcut_actions.set(action.shortcut(), &action);
+    
+    dbg() << "*** m_global_shortcut_actions  :" << m_global_shortcut_actions.size() << " : " << m_global_shortcut_actions.capacity() << "***\n";
+
 }
 
 void Application::unregister_global_shortcut_action(Badge<Action>, Action& action)

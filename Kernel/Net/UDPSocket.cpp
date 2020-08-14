@@ -126,6 +126,7 @@ int UDPSocket::protocol_allocate_local_port()
         if (it == sockets_by_port().resource().end()) {
             set_local_port(port);
             sockets_by_port().resource().set(port, this);
+            dbg() << "*** UDPSock by port table :" << sockets_by_port().resource().size() << " : " << sockets_by_port().resource().capacity() << "***\n";
             return port;
         }
         ++port;
@@ -143,6 +144,7 @@ KResult UDPSocket::protocol_bind()
     if (sockets_by_port().resource().contains(local_port()))
         return KResult(-EADDRINUSE);
     sockets_by_port().resource().set(local_port(), this);
+    dbg() << "*** UDPSock by port table :" << sockets_by_port().resource().size() << " : " << sockets_by_port().resource().capacity() << "***\n";
     return KSuccess;
 }
 

@@ -48,6 +48,8 @@ const Bitmap* Emoji::emoji_for_code_point(u32 code_point)
     }
 
     s_emojis.set(code_point, bitmap);
+    dbg() << "*** Emoji table :" << s_emojis.size() << " : " << s_emojis.capacity() << "***\n";
+
     return bitmap.ptr();
 }
 

@@ -93,6 +93,9 @@ static void ensure_caps()
 
     caps->set("co", "80");
     caps->set("li", "25");
+
+    dbg() << "*** Term caps :" << caps->size() << " : " << caps->capacity() << "***\n";
+
 }
 
 char* tgetstr(const char* id, char** area)
