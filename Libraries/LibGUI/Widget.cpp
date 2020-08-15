@@ -75,6 +75,8 @@ WidgetClassRegistration::WidgetClassRegistration(const String& class_name, Funct
     , m_factory(move(factory))
 {
     widget_classes().set(class_name, this);
+    dbg() << "*** WidgetClassRegistration widget_classes :" << widget_classes().size() << " : " << widget_classes().capacity() << "***\n";
+
 }
 
 WidgetClassRegistration::~WidgetClassRegistration()

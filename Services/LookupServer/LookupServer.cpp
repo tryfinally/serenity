@@ -254,6 +254,8 @@ Vector<String> LookupServer::lookup(const String& hostname, bool& did_timeout, u
         if (m_lookup_cache.size() >= 256)
             m_lookup_cache.remove(m_lookup_cache.begin());
         m_lookup_cache.set(hostname, { request.questions()[0], move(cacheable_answers) });
+        dbg() << "*** LookupServer m_lookup_cache :" << m_lookup_cache.size() << " : " << m_lookup_cache.capacity() << "***\n";
+
     }
     return responses;
 }

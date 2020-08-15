@@ -64,6 +64,7 @@ Device::Device(unsigned major, unsigned minor)
     }
     ASSERT(!all_devices().contains(device_id));
     all_devices().set(device_id, this);
+    dbg() << "*** Device table :" << all_devices().size() << " : " << all_devices().capacity() << "***\n";
 }
 
 Device::~Device()
