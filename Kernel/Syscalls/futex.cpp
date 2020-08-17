@@ -45,7 +45,7 @@ static void compute_relative_timeout_from_absolute(const timespec& absolute_time
 WaitQueue& Process::futex_queue(Userspace<const i32*> userspace_address)
 {
     auto& queue = m_futex_queues.ensure(userspace_address.ptr());
-    dbg() << "*** futex_queue :" << futex_queue.size() << " : " << futex_queue.capacity() << "***\n";
+    dbg() << "*** m_futex_queues :" << m_futex_queues.size() << " : " << m_futex_queues.capacity() << "***\n";
 
     if (!queue)
         queue = make<WaitQueue>();
