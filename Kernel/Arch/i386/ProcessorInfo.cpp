@@ -25,7 +25,6 @@
  */
 
 #include <AK/Assertions.h>
-#include <AK/HashMap.h>
 #include <AK/String.h>
 #include <AK/StringBuilder.h>
 #include <AK/Types.h>
@@ -34,8 +33,8 @@
 
 namespace Kernel {
 
-ProcessorInfo::ProcessorInfo(Processor& processor):
-    m_processor(processor)
+ProcessorInfo::ProcessorInfo(Processor& processor)
+    : m_processor(processor)
 {
     {
         CPUID cpuid(0);
