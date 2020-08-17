@@ -94,6 +94,7 @@ FIFO::FIFO(uid_t uid)
 {
     LOCKER(all_fifos().lock());
     all_fifos().resource().set(this);
+    dbg() << "*** all_fifos  :" << all_fifos().resource().size() << " : " << all_fifos().resource().capacity() << "***\n";
     m_fifo_id = ++s_next_fifo_id;
 }
 
