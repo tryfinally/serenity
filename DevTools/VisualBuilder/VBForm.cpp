@@ -132,7 +132,7 @@ void VBForm::second_paint_event(GUI::PaintEvent& event)
 
 bool VBForm::is_selected(const VBWidget& widget) const
 {
-    return m_selected_widgets.contains(&widget);
+    return m_selected_widgets.contains(const_cast<VBWidget*>(&widget));
 }
 
 VBWidget* VBForm::widget_at(const Gfx::IntPoint& position)
