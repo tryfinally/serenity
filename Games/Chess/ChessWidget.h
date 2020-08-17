@@ -78,7 +78,7 @@ private:
     BoardTheme m_board_theme { "Beige", Color::from_rgb(0xb58863), Color::from_rgb(0xf0d9b5) };
     Color m_move_highlight_color { Color::from_rgba(0x66ccee00) };
     Chess::Colour m_side { Chess::Colour::White };
-    HashMap<Chess::Piece, RefPtr<Gfx::Bitmap>> m_pieces;
+    HashMap<Chess::Piece, RefPtr<Gfx::Bitmap>> m_pieces { (int)Chess::Colour::None * (int)Chess::Type::None };
     String m_piece_set;
     Chess::Square m_moving_square { 50, 50 };
     Gfx::IntPoint m_drag_point;

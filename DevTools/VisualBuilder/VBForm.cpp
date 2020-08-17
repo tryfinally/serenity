@@ -132,8 +132,7 @@ void VBForm::second_paint_event(GUI::PaintEvent& event)
 
 bool VBForm::is_selected(const VBWidget& widget) const
 {
-    // FIXME: Fix HashTable and remove this const_cast.
-    return m_selected_widgets.contains(const_cast<VBWidget*>(&widget));
+    return m_selected_widgets.contains(&widget);
 }
 
 VBWidget* VBForm::widget_at(const Gfx::IntPoint& position)
@@ -398,6 +397,7 @@ void VBForm::load_from_file(const String& path)
 
     m_name = form_json.value().as_object().get("name").to_string();
     auto widgets = form_json.value().as_object().get("widgets").as_array();
+    m_widgets.grow_capacity(widgets.size());
 
     widgets.for_each([&](const JsonValue& widget_value) {
         auto& widget_object = widget_value.as_object();

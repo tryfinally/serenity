@@ -137,7 +137,7 @@ int Process::sys$setgroups(ssize_t count, Userspace<const gid_t*> user_gids)
     gids.resize(count);
     copy_from_user(gids.data(), user_gids, sizeof(gid_t) * count);
 
-    HashTable<gid_t> unique_extra_gids;
+    HashTable<gid_t> unique_extra_gids(gids.size());
     for (auto& gid : gids) {
         if (gid != m_gid)
             unique_extra_gids.set(gid);

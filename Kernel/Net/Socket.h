@@ -26,7 +26,6 @@
 
 #pragma once
 
-#include <AK/HashTable.h>
 #include <AK/NonnullRefPtrVector.h>
 #include <AK/RefCounted.h>
 #include <AK/RefPtr.h>
@@ -58,9 +57,9 @@ public:
     bool is_shut_down_for_reading() const { return m_shut_down_for_reading; }
 
     enum class SetupState {
-        Unstarted, // we haven't tried to set the socket up yet
+        Unstarted,  // we haven't tried to set the socket up yet
         InProgress, // we're in the process of setting things up - for TCP maybe we've sent a SYN packet
-        Completed, // the setup process is complete, but not necessarily successful
+        Completed,  // the setup process is complete, but not necessarily successful
     };
 
     enum class Role : u8 {
@@ -144,8 +143,8 @@ protected:
 
     virtual const char* class_name() const override { return "Socket"; }
 
-    virtual void shut_down_for_reading() {}
-    virtual void shut_down_for_writing() {}
+    virtual void shut_down_for_reading() { }
+    virtual void shut_down_for_writing() { }
 
     Role m_role { Role::None };
 
@@ -175,10 +174,10 @@ private:
     NonnullRefPtrVector<Socket> m_pending;
 };
 
-template <typename SocketType>
+template<typename SocketType>
 class SocketHandle {
 public:
-    SocketHandle() {}
+    SocketHandle() { }
 
     SocketHandle(NonnullRefPtr<SocketType>&& socket)
         : m_socket(move(socket))

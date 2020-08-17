@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include <AK/HashMap.h>
 #include <AK/URL.h>
 #include <LibCore/ElapsedTimer.h>
 #include <LibGUI/ProgressBar.h>

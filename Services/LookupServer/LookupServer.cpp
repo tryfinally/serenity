@@ -27,7 +27,6 @@
 #include "LookupServer.h"
 #include "DNSRequest.h"
 #include "DNSResponse.h"
-#include <AK/HashMap.h>
 #include <AK/String.h>
 #include <AK/StringBuilder.h>
 #include <LibCore/ConfigFile.h>
@@ -255,7 +254,6 @@ Vector<String> LookupServer::lookup(const String& hostname, bool& did_timeout, u
             m_lookup_cache.remove(m_lookup_cache.begin());
         m_lookup_cache.set(hostname, { request.questions()[0], move(cacheable_answers) });
         dbg() << "*** LookupServer m_lookup_cache :" << m_lookup_cache.size() << " : " << m_lookup_cache.capacity() << "***\n";
-
     }
     return responses;
 }

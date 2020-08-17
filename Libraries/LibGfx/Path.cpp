@@ -25,7 +25,6 @@
  */
 
 #include <AK/Function.h>
-#include <AK/HashTable.h>
 #include <AK/QuickSort.h>
 #include <AK/StringBuilder.h>
 #include <LibGfx/Painter.h>

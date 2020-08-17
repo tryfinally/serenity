@@ -26,13 +26,12 @@
 
 #pragma once
 
-#include <AK/HashMap.h>
 #include <AK/NonnullRefPtrVector.h>
 #include <AK/Optional.h>
 #include <AK/String.h>
 #include <AK/Vector.h>
-#include <LibGfx/Point.h>
 #include <LibGfx/Forward.h>
+#include <LibGfx/Point.h>
 
 namespace Gfx {
 

@@ -26,7 +26,6 @@
 
 #pragma once
 
-#include <AK/HashMap.h>
 #include <LibIPC/ClientConnection.h>
 #include <LibWeb/Forward.h>
 #include <WebContent/Forward.h>

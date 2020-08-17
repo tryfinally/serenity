@@ -45,8 +45,10 @@ CommandLine::CommandLine(const String& string)
     : m_string(string)
 {
     s_the = this;
+    const auto& args = m_string.split(' ');
+    m_params.ensure_capacity(args.size());
 
-    for (auto str : m_string.split(' ')) {
+    for (auto str : args) {
         if (str == "") {
             continue;
         }

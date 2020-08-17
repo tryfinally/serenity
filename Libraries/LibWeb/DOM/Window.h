@@ -27,6 +27,7 @@
 #pragma once
 
 #include <AK/Badge.h>
+#include <AK/HashMap.h>
 #include <AK/IDAllocator.h>
 #include <AK/RefCounted.h>
 #include <AK/RefPtr.h>

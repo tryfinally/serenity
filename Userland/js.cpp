@@ -25,8 +25,10 @@
  */
 
 #include <AK/ByteBuffer.h>
+#include <AK/HashTable.h>
 #include <AK/NonnullOwnPtr.h>
 #include <AK/StringBuilder.h>
+#include <AK/Vector.h>
 #include <LibCore/ArgsParser.h>
 #include <LibCore/File.h>
 #include <LibJS/AST.h>

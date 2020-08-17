@@ -258,7 +258,7 @@ int main(int argc, char** argv)
         out() << "namespace " << endpoint.name << " {";
         out();
 
-        HashMap<String, int> message_ids;
+        HashMap<String, int> message_ids(endpoint.messages.size());
 
         out() << "enum class MessageID : i32 {";
         for (auto& message : endpoint.messages) {

@@ -26,11 +26,13 @@
 
 #pragma once
 
+#include <AK/HashMap.h>
 #include <AK/JsonArray.h>
 #include <AK/JsonObject.h>
 #include <AK/JsonValue.h>
 #include <AK/NonnullRefPtrVector.h>
 #include <AK/OwnPtr.h>
+#include <AK/Vector.h>
 #include <LibGUI/Forward.h>
 #include <LibGUI/ModelIndex.h>
 

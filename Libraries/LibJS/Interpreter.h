@@ -28,6 +28,7 @@
 
 #include <AK/FlyString.h>
 #include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <AK/String.h>
 #include <AK/Vector.h>
 #include <AK/Weakable.h>

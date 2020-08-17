@@ -27,6 +27,8 @@
 #pragma once
 
 #include "VBWidget.h"
+#include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <AK/NonnullRefPtrVector.h>
 #include <LibGUI/Widget.h>
 

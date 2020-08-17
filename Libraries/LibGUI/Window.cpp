@@ -25,6 +25,7 @@
  */
 
 #include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <AK/JsonObject.h>
 #include <AK/NeverDestroyed.h>
 #include <AK/SharedBuffer.h>

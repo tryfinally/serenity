@@ -28,13 +28,12 @@
 
 #include "VBWidgetType.h"
 #include <AK/Function.h>
-#include <AK/HashMap.h>
 #include <AK/NonnullOwnPtrVector.h>
 #include <AK/NonnullRefPtr.h>
 #include <AK/RefCounted.h>
 #include <AK/Weakable.h>
-#include <LibGfx/Rect.h>
 #include <LibGUI/Widget.h>
+#include <LibGfx/Rect.h>
 
 class VBForm;
 class VBProperty;

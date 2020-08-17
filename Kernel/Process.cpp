@@ -707,6 +707,7 @@ size_t Process::amount_clean_inode() const
     HashTable<const InodeVMObject*> vmobjects;
     {
         ScopedSpinLock lock(m_lock);
+        vmobjects.ensure_capacity(m_regions.size());
         for (auto& region : m_regions) {
             if (region.vmobject().is_inode())
                 vmobjects.set(&static_cast<const InodeVMObject&>(region.vmobject()));

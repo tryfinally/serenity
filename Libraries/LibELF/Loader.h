@@ -27,7 +27,6 @@
 #pragma once
 
 #include <AK/Function.h>
-#include <AK/HashMap.h>
 #include <AK/NonnullRefPtr.h>
 #include <AK/OwnPtr.h>
 #include <AK/StringView.h>
@@ -45,7 +44,7 @@ namespace ELF {
 
 class Loader : public RefCounted<Loader> {
 public:
-    static NonnullRefPtr<Loader> create(const u8* data, size_t size, bool verbose_logging=true) { return adopt(*new Loader(data, size, verbose_logging)); }
+    static NonnullRefPtr<Loader> create(const u8* data, size_t size, bool verbose_logging = true) { return adopt(*new Loader(data, size, verbose_logging)); }
     ~Loader();
 
     bool load();

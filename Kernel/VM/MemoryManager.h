@@ -26,7 +26,6 @@
 
 #pragma once
 
-#include <AK/HashTable.h>
 #include <AK/NonnullRefPtrVector.h>
 #include <AK/String.h>
 #include <Kernel/Arch/i386/CPU.h>
@@ -88,7 +87,7 @@ public:
     static MemoryManager& the();
 
     static void initialize(u32 cpu);
-    
+
     static inline MemoryManagerData& get_data()
     {
         return Processor::current().get_mm_data();

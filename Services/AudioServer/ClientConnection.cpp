@@ -26,6 +26,7 @@
 
 #include "ClientConnection.h"
 #include "Mixer.h"
+#include <AK/HashMap.h>
 #include <AK/SharedBuffer.h>
 #include <AudioServer/AudioClientEndpoint.h>
 #include <LibAudio/Buffer.h>

@@ -27,6 +27,8 @@
 #pragma once
 
 #include <AK/Atomic.h>
+#include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <Kernel/FileSystem/FileBackedFileSystem.h>
 #include <Kernel/FileSystem/Inode.h>
 #include <Kernel/KBufferBuilder.h>

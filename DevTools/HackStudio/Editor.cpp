@@ -27,6 +27,7 @@
 #include "Editor.h"
 #include "EditorWrapper.h"
 #include <AK/ByteBuffer.h>
+#include <AK/HashMap.h>
 #include <AK/LexicalPath.h>
 #include <LibCore/DirIterator.h>
 #include <LibCore/File.h>
@@ -136,6 +137,7 @@ static HashMap<String, String>& man_paths()
             auto title = LexicalPath(path).title();
             paths.set(title, path);
         }
+        dbg() << "*** man+_paths:" << paths.size() << " : " << paths.capacity() << "***\n";
     }
 
     return paths;
@@ -355,6 +357,7 @@ static HashMap<String, String>& include_paths()
         add_directory("/usr/local/include", {}, add_directory);
         add_directory("/usr/local/include/c++/9.2.0", {}, add_directory);
         add_directory("/usr/include", {}, add_directory);
+        dbg() << "*** include_paths :" << paths.size() << " : " << paths.capacity() << "***\n";
     }
 
     return paths;

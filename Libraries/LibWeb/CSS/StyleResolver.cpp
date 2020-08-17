@@ -24,6 +24,7 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+#include <AK/HashTable.h>
 #include <AK/QuickSort.h>
 #include <LibWeb/CSS/Parser/CSSParser.h>
 #include <LibWeb/CSS/SelectorEngine.h>

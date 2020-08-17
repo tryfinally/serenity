@@ -56,7 +56,7 @@ public:
     }
 
 private:
-    SquareButton() {}
+    SquareButton() { }
 };
 
 class SquareLabel final : public GUI::Label {
@@ -229,7 +229,7 @@ void Field::reset()
         square->label->set_visible(false);
     }
 
-    HashTable<int> mines;
+    HashTable<int> mines(m_mine_count);
     while (mines.size() != m_mine_count) {
         int location = rand() % (rows() * columns());
         if (!mines.contains(location))

@@ -27,6 +27,7 @@
 #pragma once
 
 #include <AK/Function.h>
+#include <AK/HashMap.h>
 #include <AK/URL.h>
 #include <LibCore/Object.h>
 #include <LibWeb/Loader/Resource.h>

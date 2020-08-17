@@ -76,6 +76,7 @@ IPv4Socket::IPv4Socket(int type, int protocol)
     }
     LOCKER(all_sockets().lock());
     all_sockets().resource().set(this);
+    dbg() << "*** all_sockets :" << all_sockets().resource().size() << " : " << all_sockets().resource().capacity() << "***\n";
 }
 
 IPv4Socket::~IPv4Socket()

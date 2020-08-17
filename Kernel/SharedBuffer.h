@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include <AK/HashMap.h>
 #include <AK/OwnPtr.h>
 #include <AK/WeakPtr.h>
 #include <Kernel/VM/MemoryManager.h>

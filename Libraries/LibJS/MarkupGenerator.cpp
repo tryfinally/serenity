@@ -24,7 +24,6 @@
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <AK/HashTable.h>
 #include <AK/StringBuilder.h>
 #include <LibJS/Lexer.h>
 #include <LibJS/MarkupGenerator.h>

@@ -78,6 +78,7 @@ NetworkAdapter::NetworkAdapter()
 {
     // FIXME: I wanna lock :(
     all_adapters().resource().set(this);
+    dbg() << "*** all_adapters :" << all_adapters().resource().size() << " : " << all_adapters().resource().capacity() << "***\n";
 }
 
 NetworkAdapter::~NetworkAdapter()

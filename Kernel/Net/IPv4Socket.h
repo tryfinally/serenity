@@ -26,7 +26,7 @@
 
 #pragma once
 
-#include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <AK/SinglyLinkedListWithCount.h>
 #include <Kernel/DoubleBuffer.h>
 #include <Kernel/KBuffer.h>

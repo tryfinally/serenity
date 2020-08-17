@@ -26,6 +26,7 @@
 
 #pragma once
 
+#include <AK/HashMap.h>
 #include <Kernel/Net/NetworkAdapter.h>
 
 namespace Kernel {

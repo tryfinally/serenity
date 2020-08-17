@@ -26,7 +26,6 @@
 
 #pragma once
 
-#include <AK/HashMap.h>
 #include <ImageDecoder/Forward.h>
 #include <ImageDecoder/ImageDecoderServerEndpoint.h>
 #include <LibIPC/ClientConnection.h>

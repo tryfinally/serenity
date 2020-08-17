@@ -25,6 +25,8 @@
  */
 
 #include "ShutdownDialog.h"
+#include <AK/HashMap.h>
+#include <AK/HashTable.h>
 #include <AK/LexicalPath.h>
 #include <AK/QuickSort.h>
 #include <LibCore/ConfigFile.h>

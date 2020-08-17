@@ -28,6 +28,7 @@
 #include "RemoteObject.h"
 #include "RemoteObjectGraphModel.h"
 #include "RemoteObjectPropertyModel.h"
+#include <AK/HashMap.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -65,9 +66,10 @@ void RemoteProcess::handle_get_all_objects_response(const JsonObject& response)
     auto& object_array = objects.as_array();
 
     NonnullOwnPtrVector<RemoteObject> remote_objects;
-    HashMap<FlatPtr, RemoteObject*> objects_by_address;
+    const auto& values = object_array.values();
+    HashMap<FlatPtr, RemoteObject*> objects_by_address(values.size());
 
-    for (auto& value : object_array.values()) {
+    for (auto& value : values) {
         ASSERT(value.is_object());
         auto& object = value.as_object();
         auto remote_object = make<RemoteObject>();

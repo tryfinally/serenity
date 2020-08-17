@@ -32,6 +32,7 @@
 #include "MenuItem.h"
 #include "Screen.h"
 #include "Window.h"
+#include <AK/HashTable.h>
 #include <AK/LogStream.h>
 #include <AK/SharedBuffer.h>
 #include <AK/StdLibExtras.h>
