@@ -71,6 +71,7 @@ FlyString::FlyString(const String& string)
     auto it = fly_impls().find(const_cast<StringImpl*>(string.impl()));
     if (it == fly_impls().end()) {
         fly_impls().set(const_cast<StringImpl*>(string.impl()));
+        dbg() << "*** fly_impls :" << fly_impls().size() << " : " << fly_impls().capacity() << "***\n";
         string.impl()->set_fly({}, true);
         m_impl = string.impl();
     } else {
